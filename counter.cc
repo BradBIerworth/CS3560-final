@@ -75,3 +75,24 @@ int countLine(string filename)
     
     return count;
 }
+
+
+/**
+ * @brief counts the number of character, not including spaces, in the text files
+ * 
+ * @return int count - the number of characters in the text file
+ */
+int countChar(string filename)
+{
+    ifstream  fin(filename);
+    char ch;
+    int i, count = 0;
+    while(fin)
+    {
+        fin.get(ch);
+        i=ch;
+        if((i > 63 && i < 91) || (i > 96 && i < 123))
+                count++;
+    }
+    return count;
+}
