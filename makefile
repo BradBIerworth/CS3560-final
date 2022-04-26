@@ -12,7 +12,7 @@ doc:
 	doxygen ./count
 
 check:
-	valgrind cppcheck ./count
+	valgrind cppcheck counter.cc
 # list any file you want deleted with the command 
 # make clean
 clean:
