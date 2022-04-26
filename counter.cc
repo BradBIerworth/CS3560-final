@@ -22,10 +22,25 @@ int countChar(string filename);
  * 
  * @return int - 0 indicates a successful program run
  */
-int main()
+int main(int argc, char *argv[])
 {
-	string filename = "text.txt";   // Name of the file
+	string filename = "Ohio University"; 
+    string filename2 = "Athens";  // Name of the file
+    if(argv[0] && argv[1])
+    {
+        filename = argv[0];
+        filename2 = argv[1];
+        cout << countLine(filename) << " Lines\n";
+        cout << countChar(filename2) << " Characters\n";
 
+    } else if (argv[0]  && !argv[1])
+    {
+        filename = argv[0];
+        cout << countLine(filename) << " Lines\n";
+        cout << countChar(filename) << " Characters\n";
+    }
+    
+    
  
     countLine(filename);
     countChar(filename);
